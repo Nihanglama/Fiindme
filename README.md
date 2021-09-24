@@ -1,2 +1,2 @@
 # Fiindme
-comming soon
+django project  comming soon
