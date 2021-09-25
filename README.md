@@ -1,2 +1,2 @@
-# Fiindme
+# Findme
 django project  comming soon
