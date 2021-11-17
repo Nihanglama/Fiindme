@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>reset_password</title>
+          <style>
+                    body{
+                              background-color:black;
+                              color: aliceblue;
+                              text-align: center;
+                    }
+                    #bd{
+                              background-color: rgb(26, 28, 25);
+                              margin:0 auto;
+                              height: 500px;
+                              width: 500px;
+                              padding-top: 30px;
+                              margin-top: 5cm;
+                              text-align: center;
+
+                    }
+                    .btn-btn{
+                              margin-top: 100px;
+                              background-color: green;
+                              color: whitesmoke;
+                              border-radius: 5% 2% 3%;
+                              width: 400px;
+                              height: 32px;
+                    }
+                    #email_field{
+                              height: 30px;
+                              width:300px;
+                              margin-top: 20px;
+                              background-color: black;
+                              border-radius: 5%;
+                              border-color:blue;
+                              color: whitesmoke;
+                              
+                    }
+
+          </style>
+</head>
+<body>
+          <h3>Password Reset</h3>
+          <div id="bd">
+          <span>Forgotten your password? Enter your email address below, and we'll email instructions for setting a new one.</span>     
+          <form method="POST">
+                    {% csrf_token%}
+                    {{form}}
+                    <br>
+                    <button type="submit" class="btn-btn">Send password reset email</button>
+          </form>   
+
+
+          </div>    
+</body>
+</html>

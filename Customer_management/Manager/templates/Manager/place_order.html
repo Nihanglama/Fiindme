@@ -1,0 +1,26 @@
+{% extends 'Manager/home.html' %}
+{% load static %}
+{% block content %}
+<br> <br>
+<div id="order">
+          <h4 id="header">Create_Order</h4>
+          <hr>
+          <br>
+
+          <form method="POST">
+                    {% csrf_token %}
+                    <h5>Phone_Number: </h5>
+                    {{form.phone}}
+                    <h5>Product_Name: </h5>
+                    {{form.name}}
+                    <h5>Address</h5>
+                    {{form.address}}
+                    <br>
+                    <br>
+                    <input type="submit" value="Add_Order">
+                    
+          </form>
+
+</div>
+
+{% endblock %}

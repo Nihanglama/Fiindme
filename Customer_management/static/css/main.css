@@ -1,0 +1,131 @@
+
+body{
+          margin: 0;
+          background-color:white;
+          color: black;
+          min-height: 100vh;
+          
+}
+#total-orders{
+          background-color:rgb(37, 153, 192);
+
+}
+#orders-delivered{
+          background-color: rgb(108, 186, 213);
+}
+#orders-pending{
+          background-color: rgb(88, 129, 143);
+}
+#head{
+          background-color:rgb(106, 238, 106);
+}
+#data{
+          background-color:honeydew;
+          
+}
+
+#order{
+          background:indigo;
+          text-align: center;
+          margin: 0 auto;
+          margin-top: 60px;
+          height: 500px;
+          width: 500px;
+          padding: 20px 30px 20px 30px;
+          box-shadow: 2px 2px 3px whitesmoke;
+          border-radius: 10%;
+}         
+a{
+          text-decoration: none;
+          color: black;
+}
+
+#logout{
+          text-align: right;
+
+}
+.card{
+        box-shadow: 1px 1px 4px 2px whitesmoke;
+}
+#header{
+          font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+          font-size: 40px;
+          font-style:italic;
+}
+.row{
+        margin: 0 auto;
+        color: black;
+}
+
+#profile_body{
+        text-align:center;
+        color: black;
+        margin: 0 auto;
+
+        
+}
+#image{
+        border-radius: 50%;
+        height: 200px;
+        width: 200px;
+}
+#main_body{
+       
+
+        margin-top: 50px;
+}
+#products{
+        display: flex;
+        padding:0px;
+}
+#add_p{
+        
+        margin: 0 auto;
+        margin-top: 40px;
+        text-align: center;
+        height: 900px;
+        width: 600px;
+        border-radius: 10%;
+      
+}
+footer{
+        position: sticky;
+        top: 100%;
+        padding:50px 100px;
+        background-color:black;
+
+}
+#foot{
+        display: flex;
+        flex-direction: row;
+        justify-content:space-evenly;   
+
+}
+
+#social_links{
+        text-align: center;
+        
+
+
+}
+#developer_info{
+        color: white;
+
+        
+}
+#social_links a{
+        display: inline-block;
+        margin-right: 10px;
+        background: #222;
+        border-radius: 4px;
+        justify-content: center;
+        color: white;
+        text-align: center;
+
+     
+}
+#social_links a:hover{
+        color: #f00;
+
+
+}

@@ -1,0 +1,20 @@
+{% extends 'Manager/home.html' %}
+
+{% block content %}
+<br><br><br>
+<div id="order">
+          <form method="POST">
+                    {% csrf_token %}
+                    <h5>{{form.email}}</h5>
+                    <h5>{{form.phone}}</h5>
+                   
+                    <input type="submit" value="Update">
+          </form>
+
+</div>
+
+
+
+
+
+{% endblock content %}

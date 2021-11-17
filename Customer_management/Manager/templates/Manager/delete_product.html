@@ -1,0 +1,19 @@
+{% extends 'Manager/home.html' %}
+{% load static %}
+
+{% block content %}
+          <form method="POST">
+                    {% csrf_token %}
+                    <h3 id="confirm">Are you sure you want to delete {{product.name}}</h3> 
+                    <br>
+                    <button><a href="{% url 'product'%}">Cancel</a></button>
+                    <button type="submit">Delete</button>
+                    
+          </form>
+
+
+
+
+
+
+{% endblock content %}

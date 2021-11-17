@@ -1,0 +1,41 @@
+{% extends 'Manager/home.html' %} {% load static %} {% block content %}
+
+<br />
+<div class="row">
+  <div class="col">
+    <div class="card card-body" style="display: flex;" >
+      <form method="GET" id="search">
+        <input type="text" name="search_area" value="{{search_input}}" />
+        <input type="submit" value="Search" />
+      </form>
+      {% if request.user.is_staff%}
+        <a href="{% url 'add_p' %}" style="text-align: right;">Add_Product</a>
+      {% else %}
+      <a href="{% url 'place_order' %}" style="text-align: right;">Create_Order</a>
+      {% endif %}
+    </div>
+  </div>
+</div>
+    <h5 style="font-family: itallic; color: rgb(25, 25, 107); font-size: x-large">My Products</h5>
+  <div id="products" class="row">
+    {% for product in products %}
+    <div class="col-lg-4" >
+			<div class="box-element product" id="card1" >
+        <img src="{{product.photo.url}}" class="card-img-top" height="400px"/>
+        <br><br>
+          <h5 class="card-title">{{product.name}}</h5>
+          <p class="card-text">{{product.description}}</p>
+          <h5>Price :$ {{product.price}}</h5>
+          {% if request.user.is_staff %}
+          <a href="{% url 'delete_product' product.id %}" class="btn btn-primary">Delete</a>
+  
+          {% endif %}
+			</div>
+      <br><br>
+		</div>
+    {% endfor %}
+  </div>
+</div>
+
+
+{% endblock %}

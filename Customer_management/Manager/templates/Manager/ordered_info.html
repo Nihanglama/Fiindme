@@ -1,0 +1,28 @@
+{% extends 'Manager/home.html' %}
+
+{% block content %}
+
+    <br> <br>
+<div id="order">
+          <h4 id="header">Order_Info</h4>
+          <hr>
+          <br>
+          
+                    <h5>Customer_Name: {{order.customer}}</h5>
+                    <h5>Product_Name: {{order.name}}</h5>
+                    <h5>Category: {{order.name.category}}</h5>
+                    <h5>Price :{{order.name.price}}</h5>
+                    <h5>Status: {{order.status}}</h5>
+                    <br>
+               <a href="{% url 'dashboard' %}">Back</a>
+
+</div>      
+
+
+
+
+{% endblock content %}
+
+
+
+

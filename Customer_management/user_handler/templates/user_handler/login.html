@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html>
+          <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <title>Login</title>
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <style>
+                              body{
+                                        background-color:rgb(44, 139, 170);
+                              }
+                              #login{
+                                        margin:0 auto;
+                                        color:white;
+                                        height: 400px;
+                                        width: 400px;
+                                        margin-top: 5cm;
+                                        text-align: center;
+                                        background-color:rgb(92, 183, 213);     
+                                        border-radius: 10%;
+                                        box-shadow: 2px 2px 5px 3px black; 
+                              }
+                              #text{
+                                        text-shadow:3px 3px  rgb(202, 170, 170);
+                                        padding-top: 1cm;
+                                        
+                                        font-size: 30px;
+                              }
+                              h5{
+                                        margin-top: 0px;
+                              }
+                              #q1:hover{
+                                        text-shadow: wheat;
+                                        color:rgb(8, 49, 8);
+
+                              }
+                              input{
+                                        margin-bottom: 10px;
+                                        height: 30px;
+                                        box-shadow: 3px 3px 4px indigo;
+
+                              }
+                              input:hover{
+                                        position:relative;
+                                        width: 180px;
+                              }  
+                              #btn:hover{
+                                        background-color: indigo;
+                                        color: wheat;
+                                        border-radius: 15%;
+                              }  
+                              a{
+                                        text-decoration: none;
+                              }
+                    </style>
+          </head>
+          <body>
+                    <div id="login">
+                              <h5 id="text">LOGIN</h5>
+                              <span>{{invalid}}</span>
+                              <form method="POST">
+                                        {% csrf_token%}
+                                        <input type="text" name="username" placeholder="username" required>
+                                        <br>
+                                        <input type="password" name="password" placeholder="Password" required>
+                                        <br>
+                                        <button type="submit" id="btn">Login</button>
+                              </form>   
+                              <br>
+                              <div id="message">
+                                        {% for message in messages%}
+                                                  <p>{{message}}</p>
+                                        {% endfor %}
+                              </div>
+                              <span id="q1">Forget Password ?</span>
+                              <a href="{% url 'reset_password' %}">Reset</a>
+                              <br>
+                              <span id="q1">Don't have account ?</span>
+                              <a href="{% url 'register' %}">Signup</a>
+                              <br>
+                              <br>
+          
+                    </div>
+
+  
+     
+
+          </body>
+</html>
+

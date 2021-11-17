@@ -1,0 +1,48 @@
+{% extends 'Manager/home.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row" id="main_body">
+          <div class="col-sm-5">
+            <div class="card" id="profile_body">
+                      <h3>Account_Settings</h3>
+                      <a href="{% url 'customer_dashboard' %}" class="btn btn-primary">Back to Dashboard</a>
+              <div class="card-body">
+                    <img src="{{request.user.customer.photo.url}}" id="image">
+                    <h2>{{request.user.customer}}</h2>
+                    <button id="btn">Edit Profile</button>
+                    <br><br>
+                    <div >
+                              <form method="POST" id="profile_body1" style="display: none;" enctype="multipart/form-data">
+                                        {% csrf_token %}
+                                        {{form.as_p}}
+                                        <input type="submit" value="Submit" class="btn btn-primary">
+                                        </form>
+                         {% for message in messages %}
+                                        <p>{{message}}</p>
+                         {% endfor %}
+                        </div>
+          
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+<script>
+          var profile_u = document.getElementById("profile_body1")
+          var buttns = document.getElementById("btn")
+          buttns.onclick=function(){
+                    if(profile_u.style.display =='none'){
+                              profile_u.style.display='block';
+
+                    }else{
+                              profile_u.style.display='none';
+                    }
+          
+};
+          
+</script>
+
+{% endblock content %}

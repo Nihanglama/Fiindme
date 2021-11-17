@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+          <head>
+                    <meta charset="utf-8">
+                    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                    <title>Register</title>
+                    <meta name="description" content="">
+                    <meta name="viewport" content="width=device-width, initial-scale=1">
+                    <style>
+                              body{
+                                        background-color:rgb(44, 139, 170);
+                              }
+
+                              #login{
+                                        margin: 0 auto;
+                                        margin-top: 5cm;
+                                        background-color: rgb(92, 183, 213);
+                                        height: 500px;
+                                        width: 400px;
+                                        text-align: center;
+                                        color: white;
+                                        border-radius: 10%;
+                                        box-shadow: 2px 2px 5px 3px black;
+
+                              }
+                              #text{
+                                        text-shadow:3px 3px  rgb(202, 170, 170);
+                                        padding-top: 1cm;
+                                        
+                                        font-size: 30px;
+                              }
+                              #inputs{
+                                        margin-top: 0px;
+                                        margin-bottom: 5px;
+                                        box-shadow:3px 3px 4px indigo;
+                              }
+                              #q1:hover{
+                                        text-shadow: wheat;
+                                        color:rgb(8, 49, 8);
+
+                              }     
+                              #btn{
+                                        margin-top: 8px;
+                                        margin-bottom: 5px;
+                              } 
+                              #btn:hover{
+                                        background-color: indigo;
+                                        color: wheat;
+                                        border-radius: 15%;
+                              }
+                              #inputs:hover{
+                                        position:relative;
+                                        width: 180px;
+                              }   
+                              a{
+                                   text-decoration:none;
+                              }                
+                    </style>
+                    
+          </head>
+          <body>
+                    <div id="login">
+                              <h5 id="text">SIGN_UP</h5>
+                              <form method="POST">
+                                        {% csrf_token%}
+                                        <input type="text" name="username" id="inputs" required>
+                                        <br>
+                                        <input type="email" name="email" id="inputs" required>
+                                        <br>
+                                        <input type="password" name="password1" id="inputs" required>
+                                        <br>
+                                        <input type="password" name="password2" id="inputs" required>
+                                        <br>
+                                        <button type="submit" id="btn">Signup</button>
+                              </form>
+                              <br>
+                              <p>{{form.errors}}</p>
+                              <span id="q1">Already have account ?</span>
+                              <a href="{% url 'login' %}">Login</a>
+
+          
+                    </div>    
+  
+     <script>
+          var form_fields = document.getElementsByTagName('input')
+		form_fields[1].placeholder='Username..';
+		form_fields[2].placeholder='Email..';
+		form_fields[3].placeholder='Enter password...';
+		form_fields[4].placeholder='Re-enter Password...';
+     </script>
+
+          </body>
+</html>

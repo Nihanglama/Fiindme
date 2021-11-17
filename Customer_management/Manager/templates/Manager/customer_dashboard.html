@@ -1,0 +1,52 @@
+{% extends 'Manager/home.html' %} 
+{% load static %}
+{% block content %}
+
+{% include 'Manager/status.html'%}
+
+
+	<br />
+	<div class="row" >
+		 <div class="col" id='table_div'>
+			<div class="card card-body" id="card">
+				<h5 style="text-align:center; font-family: 'Times New Roman', Times, serif;"><b>My Orders</b></h5>
+				<hr>
+				<table class="table table-sm">
+					<tr>
+						<th>Product</th>
+						<th>Date Orderd</th>
+						<th>Status</th>
+						{% comment %} <th>Update</th> {% endcomment %}
+						<th>Remove</th>
+					</tr>
+					{% for order in orders %}
+					<tr id="data">
+						<td>{{order.name}}</td>
+						<td>{{order.order_date}}</td>
+						<td>{{order.status}}</td>
+						{% comment %} <td><a href="{% url 'update_order' order.id %}"><span class="iconify" data-icon="dashicons:update" style="color: green;" data-width="40"></span></a></td> {% endcomment %}
+						{% if order in delivered %}
+						<td><a href="{% url 'delete_order' order.id %}" id="delete"><span class="iconify" data-icon="fontisto:shopping-basket-remove" style="color: green;" data-width="40"></span></a></td>
+						{% else %}
+						<td><a href="#" id="delete"><span class="iconify" data-icon="fontisto:shopping-basket-remove" style="color: red;" data-width="40" onclick="alert('cannot be deleted !!')"></span></a></td>
+						
+						{% endif %}
+
+					</tr>
+					{% empty %}
+					<tr id="data">
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+					</tr>
+
+					{% endfor %}
+				</table>
+			</div> 
+		</div>
+	</div>
+
+
+{% endblock %}

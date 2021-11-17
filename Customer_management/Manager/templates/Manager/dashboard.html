@@ -1,0 +1,64 @@
+{% extends 'Manager/home.html' %}
+{% load static %}
+{% block content %}
+{% include 'Manager/status.html'%}
+	<br/>
+	<div class="row">
+		<div class="col-md-5">
+			<h5>CUSTOMERS:</h5>
+			<hr />
+			<div class="card card-body " id="card">
+				<h5 class="btn btn-primary btn-sm btn-block">Customers</h5>
+				<table class="table table-sm">
+					<tr>
+						<th>Customer</th>
+						<th>Phone_Number</th>
+					</tr>
+					{% for customer in al_customers %}
+					<tr id="data">
+						<td><a href="{% url 'customer' customer.id %}">{{customer.name}}</a></td>
+						<td>{{customer.phone}}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+
+		<div class="col-md-7">
+			<h5>ORDERS</h5>
+			<hr/>
+			<div class="card card-body" id="card">
+				<a class="btn btn-primary btn-sm btn-block" href="{% url 'create_order' %}">Create Order</a>
+				<table class="table table-sm">
+					<tr>
+						<th>Product</th>
+						<th>Date Orderd</th>
+						<th>Status</th>
+						<th>Update</th>
+						<th>Remove</th>
+					</tr>
+					{% for order in orders %}
+					<tr id="data">
+						<td><a href="{% url 'order_info' order.id %}">{{order.name}}</a></td>
+						<td>{{order.order_date}}</td>
+						<td>{{order.status}}</td>
+						<td><a href="{% url 'update_order' order.id %}" ><span class="iconify" data-icon="dashicons:update" style="color: green;" data-width="40"></span></a></td>
+						<td><a href="{% url 'delete_order' order.id %}" id="delete"><span class="iconify" data-icon="fontisto:shopping-basket-remove" style="color: green;" data-width="40"></span></a></td>
+					</tr>
+					{% empty %}
+					<tr id="data">
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+						<td>--</td>
+					</tr>
+
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+{% endblock content%}
