@@ -1,5 +1,3 @@
-import dj_database_url
-import django_heroku
 from pathlib import Path
 import os
 
@@ -14,9 +12,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-oip%(2xzszjs_$!g*d_j9ez2tnlqz)z1*sz7lkq7%w1!^*o@4q'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['nihang-customer-manage.herokuapp.com']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -71,11 +69,11 @@ WSGI_APPLICATION = 'Customer_management.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'customer_managedb',
-        'HOST':'localhost',
-        'PORT':'5432',
-        'USER':'postgres',
-        'PASSWORD':'adminsubash',
+        'NAME': 'name of database you created',
+        'HOST':'your host',
+        'PORT':'portnumber',
+        'USER':'username of postgres',
+        'PASSWORD':'password of postgres',
     }
 }
 
@@ -115,7 +113,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_URL= '/images/'
@@ -138,7 +135,5 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST ='smtp.gmail.com'
 EMAIL_PORT=587
 EMAIL_USE_TLS=True
-EMAIL_HOST_USER='djangotestmail1122@gmail.com'
-EMAIL_HOST_PASSWORD='djangoprojecttestmail'
-
-django_heroku.settings(locals())
+EMAIL_HOST_USER='your email'
+EMAIL_HOST_PASSWORD='password'
